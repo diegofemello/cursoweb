@@ -1,0 +1,25 @@
+name: Build Archive
+on:
+  push:
+    branches:
+      - master
+jobs:
+  publish:
+    name: Install and build
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        device: [android -t apk, ios -t simulator]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - run: yarn install
+      - run: echo ${{ matrix.device }}
+      
+        env:
+          EXPO_APPLE_ID: 1
+          EXPO_APPLE_PASSWORD: 2
