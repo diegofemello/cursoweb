@@ -24,6 +24,7 @@ jobs:
           node-version: 14.x
       - run: yarn install
       - run: echo ${{ matrix.command }}
+      - name: teste
       
         env:
           EXPO_APPLE_ID: 1
