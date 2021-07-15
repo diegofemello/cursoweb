@@ -19,10 +19,10 @@ jobs:
           command: ios -t simulator          
     
     steps:
-      - name: sei la ne
       - uses: actions/setup-node@v1
         with:
           node-version: 14.x
+      - name: sei
       - run: yarn install
       - run: echo ${{ matrix.command }}
       
