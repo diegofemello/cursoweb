@@ -19,6 +19,8 @@ jobs:
           command: ios -t simulator          
     
     steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.device }}
       - uses: actions/setup-node@v1
         with:
           node-version: 14.x
