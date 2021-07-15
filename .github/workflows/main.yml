@@ -22,4 +22,4 @@ jobs:
       
         env:
           EXPO_APPLE_ID: 1
-          EXPO_APPLE_PASSWORD: 2
+          EXPO_APPLE_PASSWORD: 23
