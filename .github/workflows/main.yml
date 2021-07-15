@@ -10,15 +10,18 @@ jobs:
     
     strategy:
       matrix:
-        device: [android -t apk, ios -t simulator]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        include:
+         - device: android
+           command: android -t apk
+         - device: ios
+           command: ios -t simulator          
     
     steps:
       - uses: actions/setup-node@v1
         with:
           node-version: 14.x
       - run: yarn install
-      - run: echo ${{ matrix.device }}
+      - run: echo ${{ matrix.command }}
       
         env:
           EXPO_APPLE_ID: 1
