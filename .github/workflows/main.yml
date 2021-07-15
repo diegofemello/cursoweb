@@ -19,14 +19,14 @@ jobs:
           command: ios -t simulator          
     
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.device }}
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
-      - run: yarn install
-      - run: echo ${{ matrix.command }}
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.name }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
+    - run: yarn install
+    - run: echo ${{ matrix.command }}
       
-        env:
-          EXPO_APPLE_ID: 1
-          EXPO_APPLE_PASSWORD: 23s
+    env:
+      EXPO_APPLE_ID: 1
+      EXPO_APPLE_PASSWORD: 23s
