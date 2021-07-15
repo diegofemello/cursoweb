@@ -11,10 +11,12 @@ jobs:
     strategy:
       matrix:
         include:
-         - device: android
-           command: android -t apk
-         - device: ios
-           command: ios -t simulator          
+        - device: android
+          name: Android
+          command: android -t apk
+        - device: ios
+          name: IOS
+          command: ios -t simulator          
     
     steps:
       - uses: actions/setup-node@v1
